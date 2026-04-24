@@ -386,3 +386,31 @@ while play == True:
                         print(f'You got {score4} points.')
                         answer = True
                         Fours = True
+
+                if scoretype.lower() == 'fives':
+                    if Fives == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 != 5 and die2 != 5 and die3 != 5 and die4 != 5 and die5 != 5:
+                        confirm = input('None of your dice have 1, are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded zero for this section.')
+                            Fives = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
+                    else:
+                        score5 = 0
+                        if die1 == 5:
+                            score5 += 5
+                        if die2 == 5:
+                            score5 += 5
+                        if die3 == 5:
+                            score5 += 5
+                        if die4 == 5:
+                            score5 += 5
+                        if die5 == 5:
+                            score5 += 5
+                        score += score5
+                        print(f'You got {score5} points.')
+                        answer = True
+                        Fives = True
