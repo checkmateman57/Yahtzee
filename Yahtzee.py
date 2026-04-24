@@ -205,4 +205,21 @@ def roll():
 
     if rollnumber == 4:
         print(f'Your final die values are {die1}, {die2}, {die3}, {die4}, and {die5}.')
+print('Welcome to Yahtzee!')
+rules = input('Would you like to know the rules? ')
+if rules.lower() == 'yes':
+    print('You have 3 rolls of 5 dice, and at any point you can choose to keep certain dice, and re-roll others.')
+    print("You score points by choosing specific numbers, so for instance if you have 4 dice that show the number 3, that's 12 points")
+    print('There are also set points, such as full house (3 of the same, and a pair), small straight (4 in a row), long straight (5 in a row)')
+    print("There's also conditional ones, such as 3 of a kind, 4 of a kind, chance (all dice added up), and a YAHTZEE (5 of a kind)")
+    print('A more detailed score breakdown will be provided later.\n')
+print('In this game, we will have 3 rounds:\n'
+      'The first round will consist of one round of rolling, where you can only try for a yahtzee worth 50 points.\n'
+      'The second one is the conventional 13 rounds of rolling with standard rules.\n'
+      'The last round is 5 rounds of rolling where you can only try for a yahtzee, with the first worth 50, the second worth 100 (so total 150), and so on.\n'
+      'Good luck, and may the dice be in your favour.\n')
+
+
+
+
 roll()
