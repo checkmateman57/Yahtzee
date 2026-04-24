@@ -270,6 +270,7 @@ while play == True:
     if action == 4:
         while roundcounter != rounds:
             die1, die2, die3, die4, die5 = roll()
+            rounds += 1
             print('Time to select a category!')
             answer = False
             while answer == False:
@@ -391,7 +392,7 @@ while play == True:
                     if Fives == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 5 and die2 != 5 and die3 != 5 and die4 != 5 and die5 != 5:
-                        confirm = input('None of your dice have 1, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 5, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
                             print('You have recorded zero for this section.')
                             Fives = True
@@ -414,3 +415,31 @@ while play == True:
                         print(f'You got {score5} points.')
                         answer = True
                         Fives = True
+
+                if scoretype.lower() == 'sixes':
+                    if Sixes == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 != 6 and die2 != 6 and die3 != 6 and die4 != 6 and die5 != 6:
+                        confirm = input('None of your dice have 6, are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded zero for this section.')
+                            Sixes = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
+                    else:
+                        score6 = 0
+                        if die1 == 6:
+                            score6 += 6
+                        if die2 == 6:
+                            score6 += 6
+                        if die3 == 6:
+                            score6 += 6
+                        if die4 == 6:
+                            score6 += 6
+                        if die5 == 6:
+                            score6 += 6
+                        score += score6
+                        print(f'You got {score6} points.')
+                        answer = True
+                        Sixes = True
