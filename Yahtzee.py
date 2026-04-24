@@ -244,8 +244,60 @@ while play == True:
         action = 3
         rounds = 13
         roundcounter = 0
+        scoring = 0
 
     if action == 3:
+        while scoring != 1:
+            print('Scoring is as follows:\n'
+                  'Ones, Twos, Threes, Fours, Fives, and Sixes is in the upper bracket, and however many of that number you have is how many points you get. If you get 63 or more points, you get a 35 point bonus.\n'
+                  'In the bottom bracket, full house is 25, short straight is 30, long straight is 40, chance is all dice added up, 3 of a kind is if you have 3 of the same, you add up all your dice. Same applies for 4 of a kind, just for 4 of the same.\n')
+            scoring = 1
+        Ones = False
+        Twos = False
+        Threes = False
+        Fours = False
+        Fives = False
+        Sixes = False
+        Threekind = False
+        Fourkind = False
+        FullHouse = False
+        SmallStraight = False
+        LongStraight = False
+        Chance = False
+        Yahtzee = False
+        action = 4
+
+    if action == 4:
         while roundcounter != rounds:
             die1, die2, die3, die4, die5 = roll()
-            print('Time')
+            print('Time to select a category!')
+            answer = False
+            while answer == False:
+                scoretype = input('What would you like to register points for?\n'
+                                  'Ones, Twos, Threes, Fours, Fives, Sixes, 3 of a kind, 4 of a kind, Full House, Small Straight, Long Straight, Chance, or Yahtzee?')
+                if scoretype.lower() == 'ones':
+                    if Ones == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 != 1 and die2 != 1 and die3 != 1 and die4 != 1 and die5 != 1:
+                        confirm = input('None of your dice have 1, are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded zero for this section.')
+                            Ones = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
+                    else:
+                        score1 = 0
+                        if die1 == 1:
+                            score1 += 1
+                        if die2 == 1:
+                            score1 += 1
+                        if die3 == 1:
+                            score1 += 1
+                        if die4 == 1:
+                            score1 += 1
+                        if die5 == 1:
+                            score1 += 1
+                        score += score1
+                        print(f'You got {score1} points.')
+                        answer = True
