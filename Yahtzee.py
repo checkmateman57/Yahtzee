@@ -205,6 +205,8 @@ def roll():
 
     if rollnumber == 4:
         print(f'Your final die values are {die1}, {die2}, {die3}, {die4}, and {die5}.')
+
+    return die1, die2, die3, die4, die5
 print('Welcome to Yahtzee!')
 rules = input('Would you like to know the rules? ')
 if rules.lower() == 'yes':
@@ -219,7 +221,31 @@ print('In this game, we will have 3 rounds:\n'
       'The last round is 5 rounds of rolling where you can only try for a yahtzee, with the first worth 50, the second worth 100 (so total 150), and so on.\n'
       'Good luck, and may the dice be in your favour.\n')
 
+play = True
+action = 1
+while play == True:
+    if action == 1:
+        ask = input('Would you like to play')
+        if ask.lower() == 'yes':
+            action = 2
+        elif ask.lower() == 'no':
+            play = False
+        else:
+            print('Your answer must be yes or no')
 
+    if action == 2:
+        score = 0
+        die1, die2, die3, die4, die5 = roll()
+        if die1 == die2 == die3 == die4 == die5:
+            print('YAHTZEE! 50 points!')
+            score += 50
+        else:
+            print('You did not get a yahtzee.')
+        action = 3
+        rounds = 13
+        roundcounter = 0
 
-
-roll()
+    if action == 3:
+        while roundcounter != rounds:
+            die1, die2, die3, die4, die5 = roll()
+            print('Time')
