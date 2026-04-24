@@ -307,7 +307,7 @@ while play == True:
                     if Twos == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 2 and die2 != 2 and die3 != 2 and die4 != 2 and die5 != 2:
-                        confirm = input('None of your dice have 1, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 2, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
                             print('You have recorded zero for this section.')
                             Twos = True
@@ -330,3 +330,31 @@ while play == True:
                         print(f'You got {score2} points.')
                         answer = True
                         Twos = True
+
+                if scoretype.lower() == 'threes':
+                    if Threes == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 != 3 and die2 != 3 and die3 != 3 and die4 != 3 and die5 != 3:
+                        confirm = input('None of your dice have 3, are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded zero for this section.')
+                            Threes = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
+                    else:
+                        score3 = 0
+                        if die1 == 3:
+                            score1 += 3
+                        if die2 == 3:
+                            score1 += 3
+                        if die3 == 3:
+                            score1 += 3
+                        if die4 == 3:
+                            score1 += 3
+                        if die5 == 3:
+                            score1 += 3
+                        score += score3
+                        print(f'You got {score3} points.')
+                        answer = True
+                        Threes = True
