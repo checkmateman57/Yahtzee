@@ -317,13 +317,13 @@ while play == True:
                     else:
                         score2 = 0
                         if die1 == 2:
-                            score1 += 2
+                            score2 += 2
                         if die2 == 2:
-                            score1 += 2
+                            score2 += 2
                         if die3 == 2:
-                            score1 += 2
+                            score2 += 2
                         if die4 == 2:
-                            score1 += 2
+                            score2 += 2
                         if die5 == 2:
                             score2 += 2
                         score += score2
@@ -345,16 +345,44 @@ while play == True:
                     else:
                         score3 = 0
                         if die1 == 3:
-                            score1 += 3
+                            score3 += 3
                         if die2 == 3:
-                            score1 += 3
+                            score3 += 3
                         if die3 == 3:
-                            score1 += 3
+                            score3 += 3
                         if die4 == 3:
-                            score1 += 3
+                            score3 += 3
                         if die5 == 3:
-                            score1 += 3
+                            score3 += 3
                         score += score3
                         print(f'You got {score3} points.')
                         answer = True
                         Threes = True
+
+                if scoretype.lower() == 'fours':
+                    if Fours == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 != 4 and die2 != 4 and die3 != 4 and die4 != 4 and die5 != 4:
+                        confirm = input('None of your dice have 4, are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded zero for this section.')
+                            Fours = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
+                    else:
+                        score4 = 0
+                        if die1 == 4:
+                            score4 += 4
+                        if die2 == 4:
+                            score4 += 4
+                        if die3 == 4:
+                            score4 += 4
+                        if die4 == 4:
+                            score4 += 4
+                        if die5 == 4:
+                            score4 += 4
+                        score += score4
+                        print(f'You got {score4} points.')
+                        answer = True
+                        Fours = True
