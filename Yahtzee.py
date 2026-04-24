@@ -301,3 +301,32 @@ while play == True:
                         score += score1
                         print(f'You got {score1} points.')
                         answer = True
+                        Ones = True
+
+                if scoretype.lower() == 'twos':
+                    if Twos == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 != 2 and die2 != 2 and die3 != 2 and die4 != 2 and die5 != 2:
+                        confirm = input('None of your dice have 1, are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded zero for this section.')
+                            Twos = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
+                    else:
+                        score2 = 0
+                        if die1 == 2:
+                            score1 += 2
+                        if die2 == 2:
+                            score1 += 2
+                        if die3 == 2:
+                            score1 += 2
+                        if die4 == 2:
+                            score1 += 2
+                        if die5 == 2:
+                            score2 += 2
+                        score += score2
+                        print(f'You got {score2} points.')
+                        answer = True
+                        Twos = True
