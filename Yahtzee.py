@@ -1,4 +1,7 @@
 import random
+from enum import unique
+
+
 def roll():
     rollnumber = 1
     if rollnumber == 1:
@@ -500,3 +503,25 @@ while play == True:
                             answer = True
                         else:
                             print('Please select another option')
+
+                elif scoretype.lower() == 'small straight':
+                    unique = set(dice)
+                    if SmallStraight == True:
+                        print('You already selected this in a previous round.')
+                    elif (
+                            {1,2,3,4}.issubset(unique) or
+                            {2,3,4,5}.issubset(unique) or
+                            {3,4,5,6}.issubset(unique)
+                    ):
+                        scoresmall = 30
+                        score += scoresmall
+                        SmallStraight = True
+                        answer = True
+                    else:
+                        confirm = input('You do not have a small straight, are you sure you want to record a 0 for this section?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded a 0 for this section')
+                            SmallStraight = True
+                            answer = True
+                        else:
+                            print('Please select another option.')
