@@ -669,4 +669,3 @@ while play == True:
             print('Your answer must be yes or no.')
 
 print('Thanks for playing!')
-
