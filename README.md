@@ -1,3 +1,5 @@
+<img width="1600" height="900" alt="8k6y8kywo8ug1" src="https://github.com/user-attachments/assets/c6e20f10-a8e8-44e6-97b7-c95b4fb2a5c5" />
+
 # Yahtzee
 A text based game of Yahtzee, the dice game, written in Python
 ## Features
