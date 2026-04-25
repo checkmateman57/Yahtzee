@@ -555,3 +555,20 @@ while play == True:
                         Chance = True
                         answer = True
 
+                elif scoretype.lower() == 'yahtzee':
+                    if Yahtzee == True:
+                        print('You already selected this in a previous round.')
+                    elif die1 == die2 == die3 == die4 == die5:
+                        scoreYahtzee = 50
+                        score += scoreYahtzee
+                        print(f'YAHTZEE! {scoreYahtzee} points!')
+                        Yahtzee = True
+                        answer = True
+                    else:
+                        confirm = input('You do not have a yahtzee, are you sure you want to record a 0 in this section?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded a 0 in this section.')
+                            Yahtzee = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
