@@ -228,7 +228,7 @@ play = True
 action = 1
 while play == True:
     if action == 1:
-        ask = input('Would you like to play')
+        ask = input('Would you like to play? ')
         if ask.lower() == 'yes':
             action = 2
         elif ask.lower() == 'no':
@@ -237,16 +237,17 @@ while play == True:
             print('Your answer must be yes or no')
 
     if action == 2:
+        print('You have one attempt to get a yahtzee.')
         score = 0
         die1, die2, die3, die4, die5 = roll()
         if die1 == die2 == die3 == die4 == die5:
-            print('YAHTZEE! 50 points!')
+            print('YAHTZEE! 50 points!\n')
             score += 50
         else:
-            print('You did not get a yahtzee.')
+            print('You did not get a yahtzee.\n')
         action = 3
-        rounds = 13
-        roundcounter = 0
+        rounds = 0
+        roundcounter = 13
         scoring = 0
 
     if action == 3:
@@ -294,12 +295,12 @@ while play == True:
             answer = False
             while answer == False:
                 scoretype = input('What would you like to register points for?\n'
-                                  'Ones, Twos, Threes, Fours, Fives, Sixes, 3 of a kind, 4 of a kind, Full House, Small Straight, Long Straight, Chance, or Yahtzee?')
+                                  'Ones, Twos, Threes, Fours, Fives, Sixes, 3 of a kind, 4 of a kind, Full House, Small Straight, Long Straight, Chance, or Yahtzee?\n')
                 if scoretype.lower() == 'ones':
                     if Ones == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 1 and die2 != 1 and die3 != 1 and die4 != 1 and die5 != 1:
-                        confirm = input('None of your dice have 1, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 1, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Ones = True
@@ -327,7 +328,7 @@ while play == True:
                     if Twos == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 2 and die2 != 2 and die3 != 2 and die4 != 2 and die5 != 2:
-                        confirm = input('None of your dice have 2, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 2, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Twos = True
@@ -355,7 +356,7 @@ while play == True:
                     if Threes == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 3 and die2 != 3 and die3 != 3 and die4 != 3 and die5 != 3:
-                        confirm = input('None of your dice have 3, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 3, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Threes = True
@@ -383,7 +384,7 @@ while play == True:
                     if Fours == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 4 and die2 != 4 and die3 != 4 and die4 != 4 and die5 != 4:
-                        confirm = input('None of your dice have 4, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 4, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Fours = True
@@ -411,7 +412,7 @@ while play == True:
                     if Fives == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 5 and die2 != 5 and die3 != 5 and die4 != 5 and die5 != 5:
-                        confirm = input('None of your dice have 5, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 5, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Fives = True
@@ -439,7 +440,7 @@ while play == True:
                     if Sixes == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 6 and die2 != 6 and die3 != 6 and die4 != 6 and die5 != 6:
-                        confirm = input('None of your dice have 6, are you sure you want to record a zero?')
+                        confirm = input('None of your dice have 6, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Sixes = True
@@ -473,7 +474,7 @@ while play == True:
                         Threekind = True
                         answer = True
                     else:
-                        confirm = input('You do not have a 3 of a kind. Are you sure you want to record a zero?' )
+                        confirm = input('You do not have a 3 of a kind. are you sure you want to record a 0? ' )
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Threekind = True
@@ -491,7 +492,7 @@ while play == True:
                         Fourkind = True
                         answer = True
                     else:
-                        confirm = input('You do not have a 4 of a kind. Are you sure you want to record a zero?')
+                        confirm = input('You do not have a 4 of a kind. are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Fourkind = True
@@ -509,7 +510,7 @@ while play == True:
                         FullHouse = True
                         answer = True
                     else:
-                        confirm = input('You do not have a full house. Are you sure you want to record a 0 for this section?')
+                        confirm = input('You do not have a full house. are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             FullHouse = True
@@ -532,7 +533,7 @@ while play == True:
                         SmallStraight = True
                         answer = True
                     else:
-                        confirm = input('You do not have a small straight, are you sure you want to record a 0 for this section?')
+                        confirm = input('You do not have a small straight, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             SmallStraight = True
@@ -550,7 +551,7 @@ while play == True:
                         LongStraight = True
                         answer = True
                     else:
-                        confirm = input('You do not have a long straight, are you sure you want to record a 0 for this section?')
+                        confirm = input('You do not have a long straight, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             LongStraight = True
@@ -578,7 +579,7 @@ while play == True:
                         Yahtzee = True
                         answer = True
                     else:
-                        confirm = input('You do not have a yahtzee, are you sure you want to record a 0 in this section?')
+                        confirm = input('You do not have a yahtzee, are you sure you want to record a 0? ')
                         if confirm.lower() == 'yes':
                             print('You have recorded 0 for this section.\n')
                             Yahtzee = True
@@ -619,43 +620,53 @@ while play == True:
         if roundcounter == rounds:
             yahtzeescore = 0
             if yahtzeecounter == 0:
-                print('You got no yahtzees.')
+                print('You got no yahtzees.\n')
             elif yahtzeescore == 1:
                 yahtzeescore = 50
                 score += yahtzeescore
-                print(f'You got 1 yahtzee! You get {yahtzeescore} points!')
+                print(f'You got 1 yahtzee! You get {yahtzeescore} points!\n')
             elif yahtzeescore == 2:
                 yahtzeescore = 150
                 score += yahtzeescore
-                print(f'You got 2 yahtzees! You get {yahtzeescore} points!')
+                print(f'You got 2 yahtzees! You get {yahtzeescore} points!\n')
             elif yahtzeescore == 3:
                 yahtzeescore = 300
                 score += yahtzeescore
-                print(f'You got 3 yahtzees! You get {yahtzeescore} points!')
+                print(f'You got 3 yahtzees! You get {yahtzeescore} points!\n')
             elif yahtzeescore == 4:
                 yahtzeescore = 500
                 score += yahtzeescore
-                print(f'You got 4 yahtzees! You get {yahtzeescore} points!')
+                print(f'You got 4 yahtzees! You get {yahtzeescore} points!\n')
             else:
                 yahtzeescore = 750
                 score += yahtzeescore
-                print(f'5 YAHTZEES???!!!! WHAT LUCK!!!! YOU GET {yahtzeescore} POINTS!!!')
+                print(f'5 YAHTZEES???!!!! WHAT LUCK!!!! YOU GET {yahtzeescore} POINTS!!!\n')
             action = 7
 
     if action == 7:
         print(f'You finished with a score of {score}!')
         if score <= 200:
-            print('You can do better.')
+            print('You can do better.\n')
         elif score > 200 and score <= 400:
-            print('Good Job!')
+            print('Good Job!\n')
         elif score > 400 and score <= 600:
-            print('Amazing Job!')
+            print('Amazing Job!\n')
         elif score > 600 and score <= 800:
-            print('Insane Score!')
+            print('Insane Score!\n')
         elif score > 800 and score <= 1000:
-            print('Wow! What an inane score! You got really lucky!')
+            print('Wow! What an inane score! You got really lucky!\n')
         elif score > 1000:
-            print('With this luck, you should buy a lottery ticket. Great work!')
+            print('With this luck, you should buy a lottery ticket. Great work!\n')
         action = 8
 
+    if action == 8:
+        ask = input('Would you like to play again? ')
+        if ask.lower() == 'yes':
+            action = 2
+        elif ask.lower() == 'no':
+            play = False
+        else:
+            print('Your answer must be yes or no.')
+
+print('Thanks for playing!')
 
