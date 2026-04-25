@@ -464,3 +464,21 @@ while play == True:
                             answer = True
                         else:
                             print('Please select another option')
+
+                elif scoretype.lower() == '4 of a kind':
+                    if Fourkind == True:
+                        print('You already selected this in a previous round.')
+                    elif max(counts.values()) >= 4:
+                        score4kind = sum(dice)
+                        score += score4kind
+                        print(f'You got {score4kind} points.')
+                        Fourkind = True
+                        answer = True
+                    else:
+                        confirm = input('You do not have a 4 of a kind. Are you sure you want to record a zero?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded a zero for this section')
+                            Fourkind = True
+                            answer = True
+                        else:
+                            print('Please select another option')
