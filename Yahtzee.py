@@ -515,6 +515,7 @@ while play == True:
                     ):
                         scoresmall = 30
                         score += scoresmall
+                        print(f'You got {scoresmall} points.')
                         SmallStraight = True
                         answer = True
                     else:
@@ -525,3 +526,21 @@ while play == True:
                             answer = True
                         else:
                             print('Please select another option.')
+
+                elif scoretype.lower() == 'long straight':
+                    if LongStraight == True:
+                        print('You already selected this in a previous round.')
+                    elif set(dice) in [{1,2,3,4,5}, {2,3,4,5,6}]:
+                        scorelarge = 40
+                        score += scorelarge
+                        print(f'You got {scorelarge} points.')
+                        LongStraight = True
+                        answer = True
+                    else:
+                        confirm = input('You do not have a long straight, are you sure you want to record a 0 for this section?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded a 0 for this section.')
+                            LongStraight = True
+                            answer = True
+                        else:
+                            print('Please select a different option.')
