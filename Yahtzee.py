@@ -544,3 +544,14 @@ while play == True:
                             answer = True
                         else:
                             print('Please select a different option.')
+
+                elif scoretype.lower() == 'chance':
+                    if Chance == True:
+                        print('You have already selected this in a previous round.')
+                    else:
+                        scorechance = sum(dice)
+                        score += scorechance
+                        print(f'You got {scorechance}points.')
+                        Chance = True
+                        answer = True
+
