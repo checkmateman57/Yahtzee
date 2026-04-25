@@ -1,6 +1,4 @@
 import random
-from enum import unique
-
 
 def roll():
     rollnumber = 1
