@@ -288,11 +288,11 @@ while play == True:
                     elif die1 != 1 and die2 != 1 and die3 != 1 and die4 != 1 and die5 != 1:
                         confirm = input('None of your dice have 1, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded zero for this section.')
+                            print('You have recorded 0 for this section.\n')
                             Ones = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
                     else:
                         score1 = 0
                         if die1 == 1:
@@ -306,7 +306,7 @@ while play == True:
                         if die5 == 1:
                             score1 += 1
                         score += score1
-                        print(f'You got {score1} points.')
+                        print(f'You got {score1} points.\n')
                         answer = True
                         Ones = True
 
@@ -316,11 +316,11 @@ while play == True:
                     elif die1 != 2 and die2 != 2 and die3 != 2 and die4 != 2 and die5 != 2:
                         confirm = input('None of your dice have 2, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded zero for this section.')
+                            print('You have recorded 0 for this section.\n')
                             Twos = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
                     else:
                         score2 = 0
                         if die1 == 2:
@@ -334,7 +334,7 @@ while play == True:
                         if die5 == 2:
                             score2 += 2
                         score += score2
-                        print(f'You got {score2} points.')
+                        print(f'You got {score2} points.\n')
                         answer = True
                         Twos = True
 
@@ -344,11 +344,11 @@ while play == True:
                     elif die1 != 3 and die2 != 3 and die3 != 3 and die4 != 3 and die5 != 3:
                         confirm = input('None of your dice have 3, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded zero for this section.')
+                            print('You have recorded 0 for this section.\n')
                             Threes = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
                     else:
                         score3 = 0
                         if die1 == 3:
@@ -362,7 +362,7 @@ while play == True:
                         if die5 == 3:
                             score3 += 3
                         score += score3
-                        print(f'You got {score3} points.')
+                        print(f'You got {score3} points.\n')
                         answer = True
                         Threes = True
 
@@ -372,11 +372,11 @@ while play == True:
                     elif die1 != 4 and die2 != 4 and die3 != 4 and die4 != 4 and die5 != 4:
                         confirm = input('None of your dice have 4, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded zero for this section.')
+                            print('You have recorded 0 for this section.\n')
                             Fours = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
                     else:
                         score4 = 0
                         if die1 == 4:
@@ -390,7 +390,7 @@ while play == True:
                         if die5 == 4:
                             score4 += 4
                         score += score4
-                        print(f'You got {score4} points.')
+                        print(f'You got {score4} points.\n')
                         answer = True
                         Fours = True
 
@@ -400,11 +400,11 @@ while play == True:
                     elif die1 != 5 and die2 != 5 and die3 != 5 and die4 != 5 and die5 != 5:
                         confirm = input('None of your dice have 5, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded zero for this section.')
+                            print('You have recorded 0 for this section.\n')
                             Fives = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
                     else:
                         score5 = 0
                         if die1 == 5:
@@ -418,7 +418,7 @@ while play == True:
                         if die5 == 5:
                             score5 += 5
                         score += score5
-                        print(f'You got {score5} points.')
+                        print(f'You got {score5} points.\n')
                         answer = True
                         Fives = True
 
@@ -428,11 +428,11 @@ while play == True:
                     elif die1 != 6 and die2 != 6 and die3 != 6 and die4 != 6 and die5 != 6:
                         confirm = input('None of your dice have 6, are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded zero for this section.')
+                            print('You have recorded 0 for this section.\n')
                             Sixes = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
                     else:
                         score6 = 0
                         if die1 == 6:
@@ -446,7 +446,7 @@ while play == True:
                         if die5 == 6:
                             score6 += 6
                         score += score6
-                        print(f'You got {score6} points.')
+                        print(f'You got {score6} points.\n')
                         answer = True
                         Sixes = True
 
@@ -456,17 +456,17 @@ while play == True:
                     elif max(counts.values()) >= 3:
                         score3kind = sum(dice)
                         score += score3kind
-                        print(f'You got {score3kind} points.')
+                        print(f'You got {score3kind} points.\n')
                         Threekind = True
                         answer = True
                     else:
                         confirm = input('You do not have a 3 of a kind. Are you sure you want to record a zero?' )
                         if confirm.lower() == 'yes':
-                            print('You have recorded a zero for this section')
+                            print('You have recorded 0 for this section.\n')
                             Threekind = True
                             answer = True
                         else:
-                            print('Please select another option')
+                            print('Please select a different option.\n')
 
                 elif scoretype.lower() == '4 of a kind':
                     if Fourkind == True:
@@ -474,17 +474,17 @@ while play == True:
                     elif max(counts.values()) >= 4:
                         score4kind = sum(dice)
                         score += score4kind
-                        print(f'You got {score4kind} points.')
+                        print(f'You got {score4kind} points.\n')
                         Fourkind = True
                         answer = True
                     else:
                         confirm = input('You do not have a 4 of a kind. Are you sure you want to record a zero?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded a zero for this section')
+                            print('You have recorded 0 for this section.\n')
                             Fourkind = True
                             answer = True
                         else:
-                            print('Please select another option')
+                            print('Please select a different option.\n')
 
                 elif scoretype.lower() == 'full house':
                     if FullHouse == True:
@@ -492,17 +492,17 @@ while play == True:
                     elif sorted(counts.values()) == [2,3]:
                         scoreFullHouse = 25
                         score += scoreFullHouse
-                        print(f'You got {scoreFullHouse} points.')
+                        print(f'You got {scoreFullHouse} points.\n')
                         FullHouse = True
                         answer = True
                     else:
                         confirm = input('You do not have a full house. Are you sure you want to record a 0 for this section?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded a 0 for this section')
+                            print('You have recorded 0 for this section.\n')
                             FullHouse = True
                             answer = True
                         else:
-                            print('Please select another option')
+                            print('Please select a different option.\n')
 
                 elif scoretype.lower() == 'small straight':
                     unique = set(dice)
@@ -515,17 +515,17 @@ while play == True:
                     ):
                         scoresmall = 30
                         score += scoresmall
-                        print(f'You got {scoresmall} points.')
+                        print(f'You got {scoresmall} points.\n')
                         SmallStraight = True
                         answer = True
                     else:
                         confirm = input('You do not have a small straight, are you sure you want to record a 0 for this section?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded a 0 for this section')
+                            print('You have recorded 0 for this section.\n')
                             SmallStraight = True
                             answer = True
                         else:
-                            print('Please select another option.')
+                            print('Please select a different option.\n')
 
                 elif scoretype.lower() == 'long straight':
                     if LongStraight == True:
@@ -533,17 +533,17 @@ while play == True:
                     elif set(dice) in [{1,2,3,4,5}, {2,3,4,5,6}]:
                         scorelarge = 40
                         score += scorelarge
-                        print(f'You got {scorelarge} points.')
+                        print(f'You got {scorelarge} points.\n')
                         LongStraight = True
                         answer = True
                     else:
                         confirm = input('You do not have a long straight, are you sure you want to record a 0 for this section?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded a 0 for this section.')
+                            print('You have recorded 0 for this section.\n')
                             LongStraight = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
 
                 elif scoretype.lower() == 'chance':
                     if Chance == True:
@@ -551,7 +551,7 @@ while play == True:
                     else:
                         scorechance = sum(dice)
                         score += scorechance
-                        print(f'You got {scorechance}points.')
+                        print(f'You got {scorechance} points.\n')
                         Chance = True
                         answer = True
 
@@ -561,14 +561,18 @@ while play == True:
                     elif die1 == die2 == die3 == die4 == die5:
                         scoreYahtzee = 50
                         score += scoreYahtzee
-                        print(f'YAHTZEE! {scoreYahtzee} points!')
+                        print(f'YAHTZEE! {scoreYahtzee} points!\n')
                         Yahtzee = True
                         answer = True
                     else:
                         confirm = input('You do not have a yahtzee, are you sure you want to record a 0 in this section?')
                         if confirm.lower() == 'yes':
-                            print('You have recorded a 0 in this section.')
+                            print('You have recorded 0 for this section.\n')
                             Yahtzee = True
                             answer = True
                         else:
-                            print('Please select a different option.')
+                            print('Please select a different option.\n')
+
+                else:
+                    print('Your answer must be from:\n'
+                          'Ones, Twos, Threes, Fours, Fives, Sixes, 3 of a kind, 4 of a kind, Full House, Small Straight, Long Straight, Chance, or Yahtzee.')
