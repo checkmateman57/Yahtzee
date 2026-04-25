@@ -45,6 +45,9 @@ This game is a a little different than your standard game of yahtzee, which cons
 
 -5 Yahtzees: 750 points
 
+# How to Play
+Download the exe, then answer all yes or no questions exactly with a yes or a no. When asking about locking dice, those are yes or no questions, and you do have to re-lock dice you already locked in prior rounds. When asking about where you should be scored, type exactly as seen in the question.
+
 # Final Comments
 
 In my opinion, I can see the progression in my coding skills. Unlike my last project, Roulette, there were not as many if statements, and basically a fifth of total code written. 
