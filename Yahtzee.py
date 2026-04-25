@@ -605,7 +605,7 @@ while play == True:
 
     if action == 6:
         print('You now get 5 attempts to get a yahtzee.\n'
-              'First one is worth 50, second one 100, third one 150, fourth one 200, fifth 250\n')
+              'First yahtzee is worth 50, second one 100, third one 150, fourth one 200, fifth 250\n')
         yahtzeecounter = 0
         roundcounter = 5
         rounds = 0
