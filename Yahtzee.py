@@ -268,6 +268,19 @@ while play == True:
         LongStraight = False
         Chance = False
         Yahtzee = False
+        score1 = 0
+        score2 = 0
+        score3 = 0
+        score4 = 0
+        score5 = 0
+        score6 = 0
+        score3kind = 0
+        score4kind = 0
+        scoreFullHouse = 0
+        scoresmall = 0
+        scorelarge = 0
+        scorechance = 0
+        scoreYahtzee = 0
         action = 4
 
     if action == 4:
@@ -576,3 +589,73 @@ while play == True:
                 else:
                     print('Your answer must be from:\n'
                           'Ones, Twos, Threes, Fours, Fives, Sixes, 3 of a kind, 4 of a kind, Full House, Small Straight, Long Straight, Chance, or Yahtzee.')
+        if roundcounter == rounds:
+            action = 5
+
+    if action == 5:
+        scoretop = score1 + score2 + score3 + score4 + score5 + score6
+        if scoretop >= 63:
+            print("You got 63 or more points in your top bracket, earning you a 35 point bonus!\n")
+            score += 35
+        else:
+            print("You did not get 63 or more points in your top bracket, so you don't get a bonus.\n")
+        action = 6
+
+
+    if action == 6:
+        print('You now get 5 attempts to get a yahtzee.\n'
+              'First one is worth 50, second one 100, third one 150, fourth one 200, fifth 250\n')
+        yahtzeecounter = 0
+        roundcounter = 5
+        rounds = 0
+        while roundcounter != rounds:
+            die1, die2, die3, die4, die5 = roll()
+            rounds += 1
+            if die1 == die2 == die3 == die4 == die5:
+                print('YAHTZEE!\n')
+                yahtzeecounter += 1
+            else:
+                print('No yahtzee\n')
+        if roundcounter == rounds:
+            yahtzeescore = 0
+            if yahtzeecounter == 0:
+                print('You got no yahtzees.')
+            elif yahtzeescore == 1:
+                yahtzeescore = 50
+                score += yahtzeescore
+                print(f'You got 1 yahtzee! You get {yahtzeescore} points!')
+            elif yahtzeescore == 2:
+                yahtzeescore = 150
+                score += yahtzeescore
+                print(f'You got 2 yahtzees! You get {yahtzeescore} points!')
+            elif yahtzeescore == 3:
+                yahtzeescore = 300
+                score += yahtzeescore
+                print(f'You got 3 yahtzees! You get {yahtzeescore} points!')
+            elif yahtzeescore == 4:
+                yahtzeescore = 500
+                score += yahtzeescore
+                print(f'You got 4 yahtzees! You get {yahtzeescore} points!')
+            else:
+                yahtzeescore = 750
+                score += yahtzeescore
+                print(f'5 YAHTZEES???!!!! WHAT LUCK!!!! YOU GET {yahtzeescore} POINTS!!!')
+            action = 7
+
+    if action == 7:
+        print(f'You finished with a score of {score}!')
+        if score <= 200:
+            print('You can do better.')
+        elif score > 200 and score <= 400:
+            print('Good Job!')
+        elif score > 400 and score <= 600:
+            print('Amazing Job!')
+        elif score > 600 and score <= 800:
+            print('Insane Score!')
+        elif score > 800 and score <= 1000:
+            print('Wow! What an inane score! You got really lucky!')
+        elif score > 1000:
+            print('With this luck, you should buy a lottery ticket. Great work!')
+        action = 8
+
+
