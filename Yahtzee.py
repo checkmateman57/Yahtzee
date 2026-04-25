@@ -482,3 +482,21 @@ while play == True:
                             answer = True
                         else:
                             print('Please select another option')
+
+                elif scoretype.lower() == 'full house':
+                    if FullHouse == True:
+                        print('You already selected this in a previous round.')
+                    elif sorted(counts.values()) == [2,3]:
+                        scoreFullHouse = 25
+                        score += scoreFullHouse
+                        print(f'You got {scoreFullHouse} points.')
+                        FullHouse = True
+                        answer = True
+                    else:
+                        confirm = input('You do not have a full house. Are you sure you want to record a 0 for this section?')
+                        if confirm.lower() == 'yes':
+                            print('You have recorded a 0 for this section')
+                            FullHouse = True
+                            answer = True
+                        else:
+                            print('Please select another option')
