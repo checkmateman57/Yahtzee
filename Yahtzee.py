@@ -112,73 +112,73 @@ def roll():
             if question == 1:
                 answer = False
                 while answer == False:
-                    die1choose = input(f"Would you like to lock or unlock die 1's value, which is a {die1}? ")
-                    if die1choose.lower() == 'lock':
+                    die1choose = input(f"Would you like to lock die 1's value, which is a {die1}? ")
+                    if die1choose.lower() == 'yes':
                         die1lock = True
                         question = 2
                         answer = True
-                    elif die1choose.lower() == 'unlock':
+                    elif die1choose.lower() == 'no':
                         die1lock = False
                         question = 2
                         answer = True
                     else:
-                        print('Your answer must be lock or unlock.')
+                        print('Your answer must be yes or no.')
             if question == 2:
                 answer = False
                 while answer == False:
-                    die2choose = input(f"Would you like to lock or unlock die 2's value, which is a {die2}? ")
-                    if die2choose.lower() == 'lock':
+                    die2choose = input(f"Would you like to lock die 2's value, which is a {die2}? ")
+                    if die2choose.lower() == 'yes':
                         die2lock = True
                         question = 3
                         answer = True
-                    elif die2choose.lower() == 'unlock':
+                    elif die2choose.lower() == 'no':
                         die2lock = False
                         question = 3
                         answer = True
                     else:
-                        print('Your answer must be lock or unlock.')
+                        print('Your answer must be yes or no.')
             if question == 3:
                 answer = False
                 while answer == False:
-                    die3choose = input(f"Would you like to lock or unlock die 3's value, which is a {die3}? ")
-                    if die3choose.lower() == 'lock':
+                    die3choose = input(f"Would you like to lock die 3's value, which is a {die3}? ")
+                    if die3choose.lower() == 'yes':
                         die3lock = True
                         question = 4
                         answer = True
-                    elif die3choose.lower() == 'unlock':
+                    elif die3choose.lower() == 'no':
                         die3lock = False
                         question = 4
                         answer = True
                     else:
-                        print('Your answer must be lock or unlock.')
+                        print('Your answer must be yes or no.')
             if question == 4:
                 answer = False
                 while answer == False:
-                    die4choose = input(f"Would you like to lock or unlock die 4's value, which is a {die4}? ")
-                    if die4choose.lower() == 'lock':
+                    die4choose = input(f"Would you like to lock die 4's value, which is a {die4}? ")
+                    if die4choose.lower() == 'yes':
                         die4lock = True
                         question = 5
                         answer = True
-                    elif die4choose.lower() == 'unlock':
+                    elif die4choose.lower() == 'no':
                         die4lock = False
                         question = 5
                         answer = True
                     else:
-                        print("Your answer must be lock or unlock.")
+                        print("Your answer must be yes or no.")
             if question == 5:
                 answer = False
                 while answer == False:
-                    die5choose = input(f"Would you like to lock or unlock die 5's value, which is a {die5}? ")
-                    if die5choose.lower() == 'lock':
+                    die5choose = input(f"Would you like to lock die 5's value, which is a {die5}? ")
+                    if die5choose.lower() == 'yes':
                         die5lock = True
                         rollnumber = 3
                         answer = True
-                    elif die5choose.lower() == 'unlock':
+                    elif die5choose.lower() == 'no':
                         die5lock = False
                         rollnumber = 3
                         answer = True
                     else:
-                        print('Your answer must be lock or unlock')
+                        print('Your answer must be yes or no')
 
 
     if rollnumber == 3:
@@ -270,6 +270,9 @@ while play == True:
     if action == 4:
         while roundcounter != rounds:
             die1, die2, die3, die4, die5 = roll()
+            dice = [die1, die2, die3, die4, die5]
+            from collections import Counter
+            counts = Counter(dice)
             rounds += 1
             print('Time to select a category!')
             answer = False
@@ -304,7 +307,7 @@ while play == True:
                         answer = True
                         Ones = True
 
-                if scoretype.lower() == 'twos':
+                elif scoretype.lower() == 'twos':
                     if Twos == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 2 and die2 != 2 and die3 != 2 and die4 != 2 and die5 != 2:
@@ -332,7 +335,7 @@ while play == True:
                         answer = True
                         Twos = True
 
-                if scoretype.lower() == 'threes':
+                elif scoretype.lower() == 'threes':
                     if Threes == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 3 and die2 != 3 and die3 != 3 and die4 != 3 and die5 != 3:
@@ -360,7 +363,7 @@ while play == True:
                         answer = True
                         Threes = True
 
-                if scoretype.lower() == 'fours':
+                elif scoretype.lower() == 'fours':
                     if Fours == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 4 and die2 != 4 and die3 != 4 and die4 != 4 and die5 != 4:
@@ -388,7 +391,7 @@ while play == True:
                         answer = True
                         Fours = True
 
-                if scoretype.lower() == 'fives':
+                elif scoretype.lower() == 'fives':
                     if Fives == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 5 and die2 != 5 and die3 != 5 and die4 != 5 and die5 != 5:
@@ -416,7 +419,7 @@ while play == True:
                         answer = True
                         Fives = True
 
-                if scoretype.lower() == 'sixes':
+                elif scoretype.lower() == 'sixes':
                     if Sixes == True:
                         print('You already selected this in a previous round.')
                     elif die1 != 6 and die2 != 6 and die3 != 6 and die4 != 6 and die5 != 6:
@@ -443,3 +446,21 @@ while play == True:
                         print(f'You got {score6} points.')
                         answer = True
                         Sixes = True
+
+                elif scoretype.lower() == '3 of a kind':
+                    if Threekind == True:
+                        print('You already selected this in a previous round.')
+                    elif max(counts.values()) >= 3:
+                        score3kind = sum(dice)
+                        score += score3kind
+                        print(f'You got {score3kind} points.')
+                        Threekind = True
+                        answer = True
+                    else:
+                        confirm = input('You do not have a 3 of a kind. Are you sure you want to record a zero?' )
+                        if confirm.lower() == 'yes':
+                            print('You have recorded a zero for this section')
+                            Threekind = True
+                            answer = True
+                        else:
+                            print('Please select another option')
